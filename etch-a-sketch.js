@@ -8,6 +8,9 @@ change squaresize to fit
 */
 
 let container = document.querySelector(".container");
+let columns = 16;
+let rows = 16;
+let totalSquares = columns * rows;
 
 function addSquare() {
     let square = document.createElement("div");
@@ -17,7 +20,16 @@ function addSquare() {
     container.append(square);
 }
 
-addSquare();
-addSquare();
-addSquare();
-addSquare();
+for (let i = 0; i < totalSquares; i++) {
+    addSquare();
+}
+
+let squaresArray = document.querySelectorAll(".square");
+
+function hover() {
+    
+}
+
+squaresArray.forEach((square) => {
+    square.addEventListener("mouseover", hover);
+});
