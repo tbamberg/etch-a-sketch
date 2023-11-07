@@ -13,6 +13,6 @@ button {
 
 .square {
     box-sizing: border-box;
-    background-color: gray;
-    border: 1px solid white;
+    background-color: white;
+    border: 1px solid black;
 }

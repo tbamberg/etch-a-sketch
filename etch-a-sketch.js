@@ -14,22 +14,17 @@ let totalSquares = columns * rows;
 
 function addSquare() {
     let square = document.createElement("div");
+
     square.className = "square";
     square.style.height = "40px";
     square.style.width = "40px";
     container.append(square);
+
+    square.addEventListener("mouseover", () => {
+        square.style.backgroundColor = "red";
+    });
 }
 
 for (let i = 0; i < totalSquares; i++) {
     addSquare();
 }
-
-let squaresArray = document.querySelectorAll(".square");
-
-function hover() {
-    
-}
-
-squaresArray.forEach((square) => {
-    square.addEventListener("mouseover", hover);
-});
