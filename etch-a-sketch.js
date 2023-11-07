@@ -1,13 +1,12 @@
 let container = document.querySelector(".container");
-let size = 16;
-let totalSquares = size * size;
+let squaresPerSide = 16;
 
-function addSquare() {
+
+function addSquare(squareSize) {
     let square = document.createElement("div");
 
     square.className = "square";
-    square.style.width = "40px";
-    square.style.height = "40px";
+    square.style.width = square.style.height = squareSize + "px";
     
     container.append(square);
 
@@ -16,13 +15,20 @@ function addSquare() {
     });
 }
 
-for (let i = 0; i < totalSquares; i++) {
-    addSquare();
+function buildGrid(numSquares) {
+    let totalSquares = numSquares * numSquares;
+    let squareSize = 640 / numSquares; // 640 = width&height of .container
+
+    for (let i = 0; i < totalSquares; i++) {
+        addSquare(squareSize);
+    }
 }
+
+buildGrid(squaresPerSide);
 
 let btn = document.querySelector("button");
 btn.addEventListener("click", () => {
-    size = prompt("Change size of side (1-100)");
-    console.log(size);
+    buildGrid(prompt("Change squares per side (1-100)"));
+    //need to add logic to remove previous grid
 });
 
