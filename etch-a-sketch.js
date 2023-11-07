@@ -21,7 +21,7 @@ function addSquare() {
     container.append(square);
 
     square.addEventListener("mouseover", () => {
-        square.style.backgroundColor = "red";
+        square.style.backgroundColor = "aliceblue";
     });
 }
 
